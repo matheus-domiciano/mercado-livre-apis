@@ -45,3 +45,20 @@ export async function createAffiliateLink(req: Request, res: Response) {
   }
 }
 
+interface ProdProps {
+  prod: string;
+}
+
+
+export async function scrapMercadoLivreProducts(req: Request, res: Response) {
+
+    const { prod } = req.params
+
+    const params: ProdProps = { 
+      prod
+     };
+
+    const apiResponse = await MercadoLivreServices.scrapMLProds(params);
+    return res.status(200).json(apiResponse); 
+}
+
