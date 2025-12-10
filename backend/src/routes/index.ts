@@ -6,7 +6,7 @@ const router = Router();
 
 // MercoSul
 router.use("/mercado-livre", MLBRoutes);
-w
+
 // Internacional
 router.use("/amazon", (req, res)=>{
     res.status(501).json({
